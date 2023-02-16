@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>The Tech Blog</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>The Tech Blog</h1>
+    <ul class="list-group d-flex flex-row justify-content-evenly">
+      <li class="navItem"><a href="/">Home</a></li>
+      <li class="navItem"><a href="/dashboard">Dashboard</a></li>
+
+      {{#if loggedIn}}
+      <li class="navItem" id="logout"><a href="/users">Logout</a></li>
+      {{else}}
+      <li class="navItem" id="login"><a href="/users">Login</a></li>
+      {{/if}}
+    </ul>
+  </header>
+
+  <main>
+    {{{body}}}
+  </main>
+
+</body>
+
+<script src="/js/dashboard.js"></script>
+<script src="/js/login.js"></script>
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
+
+</html>

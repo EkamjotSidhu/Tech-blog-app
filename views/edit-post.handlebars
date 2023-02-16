@@ -1,0 +1,14 @@
+{{#if loggedIn}}
+    <div class="post-card my-5 p-3" id="{{post.id}}">
+        <h3>Title</h3>
+        <input type="text" class="form-control" id="updatedTitle" value="{{post.title}}">
+        <h3>Content</h3>
+        <input type="text" class="form-control" id="updatedContent" value="{{post.content}}">
+        <button class="m-3 btn btn-outline-dark" id="update">Update Post</button>
+        <p>Date created: {{post.createdAt}}</p>
+    </div>
+
+    <script src="/js/update.js"></script>
+{{else}}
+<h5><a href="/users">Login</a> to edit posts</h5>
+{{/if}}

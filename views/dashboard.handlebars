@@ -1,0 +1,25 @@
+{{#if loggedIn}}
+<section id="dashboard">
+    <p>{{myUsername}}'s Posts</p>
+    {{#each posts}}
+    {{> dashboard-posts}}
+    {{else}}
+    <h3>No posts</h3>
+    {{/each}}
+</section>
+
+<button type="button" class="btn btn-outline-dark mt-5" id="addPostBtn">Create New Post</button>
+
+<form class="create-card d-none" id="form">
+    <h3 id="createHeader">Create New Post</h3>
+    <div class="p-3">
+        <h4>Title</h4>
+        <input type="text" class="form-control" id="titleInput" placeholder="Title">
+        <h4>Content</h4>
+        <textarea class="form-control form-content" id="contentInput" placeholder="Content"></textarea>
+        <button type="submit" class="btn btn-secondary btn-sm mt-4" id="createPostBtn">Create Post</button>
+    </div>
+</form>
+{{else}}
+<h5><a href="/users">Login</a> to view your dashboard</h5>
+{{/if}}
