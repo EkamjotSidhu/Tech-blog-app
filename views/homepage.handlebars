@@ -1,33 +1,33 @@
 {{#if loggedIn}}
-    <section id="homepage">
-        {{#each posts}}
-            <div class="post-card my-5" id="{{this.id}}">
-                <h3 class="post-header">{{this.title}}</h3>
-                <p class="p-3 d-none">{{this.content}}</p>
-                <p class="footer p-3 d-none">Written by: {{this.user.username}}</p>
-                <p class="footer p-3">Date created: {{this.createdAt}}</p>
-                <button class="m-3 btn btn-secondary" id="readMore"><a href="/single-post/{{this.id}}">Read More</a></button>
-            </div>
-        {{else}}
-            <h5>No posts. Create your first post <a href="/dashboard">here.</a></h5>
-        {{/each}}
-    </section>
+<section id="homepage">
+    {{#each posts}}
+    <div class="post-card my-5" id="{{this.id}}">
+        <h3 class="post-header">{{this.title}}</h3>
+        <p class="p-3 d-none">{{this.content}}</p>
+        <p class="footer p-3 d-none">Written by: {{this.user.username}}</p>
+        <p class="footer p-3">Date created: {{this.createdAt}}</p>
+        <button class="m-3 btn btn-secondary" id="readMore"><a href="/single-post/{{this.id}}">Read More</a></button>
+    </div>
+    {{else}}
+    <h5>No posts. Create your first post <a href="/dashboard">here.</a></h5>
+    {{/each}}
+</section>
 
-    <script src="/js/homepage.js"></script>
+<script src="/js/homepage.js"></script>
 {{else}}
-    <section id="homepage">
-        <h6>To comment, <a href="/users">login.</a></h6>
-        {{#each posts}}
-            <div class="post-card my-5" id="{{this.id}}">
-                <h3 class="post-header">{{this.title}}</h3>
-                <p class="p-3 d-none">{{this.content}}</p>
-                <p class="footer p-3 d-none">Written by: {{this.user.username}}</p>
-                <p class="footer p-3">Date created: {{this.createdAt}}</p>
-                <button class="m-3 btn btn-secondary" id="readMore">Read More</button>
-            </div>
-        {{else}}
-            <h5>No posts. Login and create a post <a href="/users">here.</a></h5>
-        {{/each}}
-    </section>
-    <script src="/js/homepage.js"></script>
+<section id="homepage">
+    <h6>To comment, <a href="/users">login.</a></h6>
+    {{#each posts}}
+    <div class="post-card my-5" id="{{this.id}}">
+        <h3 class="post-header">{{this.title}}</h3>
+        <p class="p-3 d-none">{{this.content}}</p>
+        <p class="footer p-3 d-none">Written by: {{this.user.username}}</p>
+        <p class="footer p-3">Date created: {{this.createdAt}}</p>
+        <button class="m-3 btn btn-secondary" id="readMore">Read More</button>
+    </div>
+    {{else}}
+    <h5>No posts. Login and create a post <a href="/users">here.</a></h5>
+    {{/each}}
+</section>
+<script src="/js/homepage.js"></script>
 {{/if}}
