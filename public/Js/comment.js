@@ -1,7 +1,7 @@
-const commentCard = document.querySelector('#addComment');
+const addComment = document.querySelector('#addComment');
 
 // render add comment form
-commentCard.addEventListener('click', (e) => {
+addComment.addEventListener('click', (e) => {
     e.preventDefault();
 
     let card = document.querySelector('#comment');

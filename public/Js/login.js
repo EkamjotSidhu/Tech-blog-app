@@ -32,16 +32,16 @@ loginBtn.addEventListener('click', async (e) => {
 
     if (username && password) {
         const response = await fetch('/users/login', {
-          method: 'POST',
-          body: JSON.stringify({ username, password }),
-          headers: { 'Content-Type': 'application/json' },
+            method: 'POST',
+            body: JSON.stringify({ username, password }),
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
             document.location.replace('/');
-          } else {
+        } else {
             alert('Failed to log in.');
-          }
+        }
     }
 });
 

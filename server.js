@@ -6,7 +6,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
 const sequelize = require('./config/connection');
-
+const cors = require('cors');
 const app = express();
 // const cors = require('cors');
 const routes = require('./controllers');
@@ -14,7 +14,7 @@ const routes = require('./controllers');
 const PORT = process.env.PORT || 3001;
 // set up session var
 const sess = {
-    secret: 'password',
+    secret: 'super secret secret',
     cookie: {
         maxAge: 300000,
         httpOnly: true,
@@ -37,7 +37,7 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors())
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
