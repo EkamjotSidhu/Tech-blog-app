@@ -17,18 +17,17 @@ createNewUserBtn.addEventListener('click', (e) => {
     loginHeader.innerHTML = 'Sign Up';
     signUpBtn.classList.remove('d-none');
     buttons.classList.add('d-none');
-    // while (buttons.children) buttons.removeChild(buttons.children[0]);
+
 });
 
-// login user
+
 loginBtn.addEventListener('click', async (e) => {
     e.preventDefault()
-    // console.log('LOGIN BTN EVENT LISTENER')
+
 
     let username = document.querySelector('#user').value;
     let password = document.querySelector('#password').value;
-    // console.log('USER: ', username);
-    // console.log('PASSWORD: ', password);
+
 
     if (username && password) {
         const response = await fetch('/users/login', {
