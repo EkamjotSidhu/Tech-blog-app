@@ -39,4 +39,4 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 To use the application go to following link https://tech-blog-app-101.herokuapp.com/
 The image bellow shows the screenshot of the app
-![alt text](./src/component/Assets/Images/appScreenshot.png)
+![alt text](/Assets/Images/Tech blog.png)
